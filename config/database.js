@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 // Option 1: Passing parameters separately
-module.exports = new Sequelize('country_db', 'root', 'pravin123', {
+module.exports = new Sequelize('country_db', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
 

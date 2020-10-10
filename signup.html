@@ -19,22 +19,14 @@
     }
     
     .w3-bar .w3-button {
-    padding: 16px;
-    font-weight: bold;
+      padding: 16px;
+      font-weight: bold;
     }
 
     .w3-image {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  	filter: grayscale(100%);
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
     }
-/* 
-	.w3-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-    justify-content: center;
-	} */
 
     @media screen and (min-width: 480px) {
         .fadeContainer {
@@ -42,21 +34,12 @@
     opacity: 0.9;
     padding-left: 20px;
     padding-right: 50px;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
     margin-left: 40%;
     margin-bottom: 50px;
     margin-top: 50px;
-    width: inherit;
-
+    width: inherit;       
   }
-}
-
-.w3-display {
-	position: absolute;
-	top: 50%;
-	left: 0%;
-	margin-left: auto;
-	transform: translate(50%, -25%);
 }
 
 .w3-tag {
@@ -96,11 +79,11 @@
   to{border-right-color: transparent;}
 }
 
-.btn {
-	margin-top: 25px;
-}
-
     </style>
+
+
+
+
 
 
 	</head>
@@ -114,32 +97,29 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h1 class="w3-xxxlarge"><b>THE BRACKETEERS</b></h1>
       <h6>COUNTRY VS COUNTRY</h6> 
       <br><br>
-      <span class="w3-tag line-1 anim-typewriter">LET THE GAMES BEGIN...</span>
+      <span class="w3-tag line-1 anim-typewriter">SIGN UP...</span>
     </header>
 
       <!-- Image header -->
-  <div class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="./imgs/untited_nations.jpg" alt="United Nations">
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="./public/imgs/soccer_dive.jpg" alt="United Nations">
     <div class="w3-display-left w3-padding-large">
-   
-      <!-- <h1 class="w3-text-white">Login</h1> -->
-	  <div class="fadeContainer w3-center">
-		<h1 class="w3-jumbo w3-text-white w3-hide-small"><b>LOGIN FORM</b></h1>
-		<div class="login-form">
-			<label for="exampleInputEmail1" class="w3-text-white">EMAIL ADDRESS</label>
-			<form action="auth" method="POST">
-				<div class="form-group">
-				<input type="text" name="username" placeholder="Username" required>
-				<label for="exampleInputPassword1" class="w3-text-white">PASSWORD</label>
-				<input type="password" name="password" placeholder="Password" required>
-				<div class="form-group">
-				<button type="submit" class="btn btn-default w3-pink">LOGIN</button>
-				</div>
-				<p class="w3-text-white">Or sign up <a class="here" href="signup.html">HERE</a></p>
-			</form>
-		</div>
 
-	</div>
+  
+<div class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Sign up to play</h4>
+        <p> </p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Password" name="Password" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>
+    </div>
+</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>

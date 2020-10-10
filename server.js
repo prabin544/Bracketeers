@@ -10,7 +10,7 @@ var mysql = require('mysql2');
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'pravin123',
+	password : 'rootroot',
 	database : 'nodelogin'
 });
 
@@ -24,7 +24,7 @@ db.authenticate()
 
 const app = express();
 
-//Hnaldebars
+//Handlebars
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 

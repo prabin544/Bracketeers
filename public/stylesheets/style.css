@@ -1,0 +1,10 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+.w3-display-left {
+  position: inherit;
+  height: 100vh;
+  /* left: 0%; */
+  transform: none;
+}

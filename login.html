@@ -17,57 +17,24 @@
       height: 100%;
       line-height: 1.8;
     }
-    
-    .w3-bar .w3-button {
-    padding: 16px;
-    font-weight: bold;
-    }
 
-    .w3-image {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  	filter: grayscale(100%);
-    }
-/* 
-	.w3-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-    justify-content: center;
-	} */
-
-    @media screen and (min-width: 480px) {
-        .fadeContainer {
-    background-color: rgb(55, 49, 49);
-    opacity: 0.9;
-    padding-left: 20px;
-    padding-right: 50px;
-    padding-bottom: 10px; 
-    margin-left: 40%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    width: inherit;
-
-  }
+	/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
 }
-
-.w3-display {
-	position: absolute;
-	top: 50%;
-	left: 0%;
-	margin-left: auto;
-	transform: translate(50%, -25%);
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255, 255, 255,.75);}
+  to{border-right-color: transparent;}
 }
 
 .w3-tag {
     animation: reverse;
 }
-
-
-  .here {
-      color: rgba(249, 100, 244, 0.988);
-      
-  }
 
 .line-1{
     position: relative;
@@ -82,22 +49,37 @@
     transform: translateY(-50%);    
 }
 
-/* Animation */
-.anim-typewriter{
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 24em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
+
+	.bgimg {
+      background-image: url('/imgs/united_nations.jpg');
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+    
+    .w3-bar .w3-button {
+    padding: 16px;
+    font-weight: bold;
+    }
+
+    @media screen and (min-width: 480px) {
+        .fadeContainer {
+    background-color: rgb(55, 49, 49);
+    opacity: 0.9;
+    width: inherit;
+  }
 }
 
 .btn {
 	margin-top: 25px;
+}
+
+.fadeContainer {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
 }
 
     </style>
@@ -107,7 +89,6 @@
 	<body>
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1600px">
 
     <!-- Header -->
     <header class="w3-container w3-center w3-padding-48 w3-white">
@@ -118,9 +99,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     </header>
 
       <!-- Image header -->
-  <div class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="./imgs/untited_nations.jpg" alt="United Nations">
-    <div class="w3-display-left w3-padding-large">
+  <div class="bgimg w3-display-container w3-wide" id="home">
+    <div class="w3-display-middle w3-padding-large">
    
       <!-- <h1 class="w3-text-white">Login</h1> -->
 	  <div class="fadeContainer w3-center">
@@ -130,15 +110,18 @@ and is wrapped around the whole page content, except for the footer in this exam
 			<form action="auth" method="POST">
 				<div class="form-group">
 				<input type="text" name="username" placeholder="Username" required>
+				<br>
 				<label for="exampleInputPassword1" class="w3-text-white">PASSWORD</label>
+				<br>
 				<input type="password" name="password" placeholder="Password" required>
 				<div class="form-group">
-				<button type="submit" class="btn btn-default w3-pink">LOGIN</button>
+				<button type="submit" class="btn btn-default">LOGIN</button>
 				</div>
 				<p class="w3-text-white">Or sign up <a class="here" href="signup.html">HERE</a></p>
 			</form>
 		</div>
-
+</div>
+</div>
 	</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

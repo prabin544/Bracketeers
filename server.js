@@ -10,7 +10,7 @@ var mysql = require('mysql2');
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'rootroot',
+	password : 'pravin123',
 	database : 'nodelogin'
 });
 
@@ -52,6 +52,10 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
 
+const signup = require("./routes/signup");
+app.use("/signup.html", signup);
+
+
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
@@ -60,6 +64,24 @@ app.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
+				response.redirect('/home');
+			} else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+
+app.post('/register', function(request, response) {
+	var username = request.body.username;
+	var password = request.body.password;
+	if (username && password) {
+		connection.query('INSERT INTO accounts SET ?', [username, password], function(error, results, fields) {
+			if (!results === 0) {
 				response.redirect('/home');
 			} else {
 				response.send('Incorrect Username and/or Password!');

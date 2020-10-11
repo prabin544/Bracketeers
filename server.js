@@ -80,12 +80,12 @@ app.post('/register', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
 	if (username && password) {
-		connection.query('INSERT INTO accounts SET ?', [username, password], function(error, results, fields) {
-			if (!results === 0) {
-				response.redirect('/home');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
+		connection.query('INSERT INTO accounts SET ?', {username, password}, function(error, fields) {
+			if (error) {
+				throw error;
+			}else{
+				response.redirect('/');
+			}		
 			response.end();
 		});
 	} else {

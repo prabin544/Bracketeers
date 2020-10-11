@@ -24,7 +24,7 @@ db.authenticate()
 
 const app = express();
 
-//Hnaldebars
+//Handlebars
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
@@ -52,6 +52,10 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
 
+const signup = require("./routes/signup");
+app.use("/signup.html", signup);
+
+
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
@@ -64,6 +68,24 @@ app.post('/auth', function(request, response) {
 			} else {
 				response.send('Incorrect Username and/or Password!');
 			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+
+app.post('/register', function(request, response) {
+	var username = request.body.username;
+	var password = request.body.password;
+	if (username && password) {
+		connection.query('INSERT INTO accounts SET ?', {username, password}, function(error, fields) {
+			if (error) {
+				throw error;
+			}else{
+				response.redirect('/');
+			}		
 			response.end();
 		});
 	} else {

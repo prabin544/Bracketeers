@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Sign in</title>
+  <title>Sign up</title>
   <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -104,10 +104,10 @@ and is wrapped around the whole page content, except for the footer in this exam
    
       <!-- <h1 class="w3-text-white">Login</h1> -->
 	  <div class="fadeContainer w3-center">
-		<h1 class="w3-jumbo w3-text-white w3-hide-small"><b>LOGIN FORM</b></h1>
+		<h1 class="w3-jumbo w3-text-white w3-hide-small"><b>SIGNUP FORM</b></h1>
 		<div class="login-form">
 			<label for="exampleInputEmail1" class="w3-text-white">EMAIL ADDRESS</label>
-			<form action="auth" method="POST">
+			<form action="/register" method="POST">
 				<div class="form-group">
 				<input type="text" name="username" placeholder="Username" required>
 				<br>
@@ -115,9 +115,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 				<br>
 				<input type="password" name="password" placeholder="Password" required>
 				<div class="form-group">
-				<button type="submit" class="btn btn-default">LOGIN</button>
+				<button type="submit" class="btn btn-default">SIGN UP</button>
 				</div>
-				<p class="w3-text-white">Or sign up <a class="here" href="signup.html">HERE</a></p>
 			</form>
 		</div>
 </div>
@@ -125,7 +124,5 @@ and is wrapped around the whole page content, except for the footer in this exam
 	</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
-
 	</body>
 </html>

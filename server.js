@@ -7,10 +7,10 @@ const bodyParser = require("body-parser");
 var session = require('express-session');
 var mysql = require('mysql2');
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'rootroot',
-    database : 'nodelogin'
+	host     : 'localhost',
+	user     : 'root',
+	password : 'rootroot',
+	database : 'nodelogin'
 });
 //databae
 const db = require("./config/database");
@@ -39,8 +39,11 @@ app.use(session({
 app.get('/', function(request, response) {
     response.sendFile(path.join(__dirname + '/login.html'));
 });
+
 const signup = require("./routes/signup");
 app.use("/signup.html", signup);
+
+
 app.post('/auth', function(request, response) {
     var username = request.body.username;
     var password = request.body.password;
@@ -77,5 +80,24 @@ app.post('/register', function(request, response) {
         response.end();
     }
 });
+
+app.post('/register', function(request, response) {
+	var username = request.body.username;
+	var password = request.body.password;
+	if (username && password) {
+		connection.query('INSERT INTO accounts SET ?', {username, password}, function(error, fields) {
+			if (error) {
+				throw error;
+			}else{
+				response.redirect('/');
+			}		
+			response.end();
+		});
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+
 app.get("/home", (req, res) => res.render("index", {defaultLayout: "landing"}));
 app.listen(PORT, console.log(`Visit http://localhost:%s/ in your browser${PORT}`));

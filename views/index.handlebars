@@ -58,6 +58,12 @@ overflow: hidden;
 }
 
 
+#logo{
+  width: 60px;
+  height: 60px;
+  padding-left: 20px;
+}
+
 </style>
 
 <div class="w3-top">
@@ -72,6 +78,7 @@ overflow: hidden;
   <div class="ticker-item">Ready to play?</div>
 </div></div></div>  
 
+
     <a href="#home"> <img src="/imgs/pinkglobe.JPG" class="rotate w3-left" width="70" height="60"></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
@@ -79,6 +86,17 @@ overflow: hidden;
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
       <a href="/countries" class="w3-bar-item w3-button">ALL COUNTRIES</a>
       <a href="/countries/add" class="w3-bar-item w3-button">ADD COUNTRY</a>
+
+    {{!-- <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a> --}}
+    <img src="./imgs/logo.JPG" alt="logo" id="logo">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="/home" class="w3-bar-item w3-button">HOME</a>
+      <a href="/countries" class="w3-bar-item w3-button">ALL COUNTRIES</a>
+      <a href="/countries/add" class="w3-bar-item w3-button">ADD COUNTRY</a>
+
+
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
@@ -89,9 +107,13 @@ overflow: hidden;
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">CLOSE ×</a>
   {{!-- <a href="#about" onclick="()" class="w3-bar-item w3-button">ABOUT</a> --}}
   <a href="/home" onclick="w3_close()" class="w3-bar-item w3-button">HOME
+
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
   <a href="/countries" onclick="w3_close()" class="w3-bar-item w3-button">ALL COUNTRIES</a>
   <a href="/countries/add" onclick="w3_close()" class="w3-bar-item w3-button">ADD COUNTRY</a>
@@ -99,11 +121,22 @@ overflow: hidden;
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+
   <div class="w3-display-left w3-text-white" style="padding:140px">
     <span class="w3-jumbo w3-hide-small">Country vs. Country</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Country vs. Country</span><br>
     <span class="w3-large">In an epic bid for world domination, there can only be one winner.<p>Which country will rule?<p>Enter the playoffs to find out!</span>
     <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Start today!</a></p>
+
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
+
+
+
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Start playoff!</a></p>
+
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
   </div>
@@ -124,8 +157,10 @@ overflow: hidden;
           <p class="w3-opacity"></p>
           <p>Genius at the back end. Master of Github. </p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/prabin544"></a><i class="fa fa-github"></i>Github</button></p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+
+            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
         </div>
       </div>
     </div>
@@ -135,10 +170,15 @@ overflow: hidden;
         <div class="w3-container">
           <h3>Teresa Heidt</h3>
           <p class="w3-opacity"></p>
+
           <p>Front end specialist. Animation expert and quality control.</p>
           <p><button class="w3-button w3-light-grey w3-block"><a href="mailto:teresaheidt@hotmail.com"></a><i class="fa fa-envelope"></i> Contact</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><a href='https://github.com/teresaheidt' target="_blank"></a> <i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><a href='https://www.linkedin.com/in/teresa-heidt-a2a4641/' target="_blank"></a> <i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+          <p>Front end</p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href="mailto:teresaheidt@hotmail.com"><i class="fa fa-envelope"></i> Contact</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href='https://github.com/teresaheidt' target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href='https://www.linkedin.com/in/teresa-heidt-a2a4641/' target="_blank"></a><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
         </div>
       </div>
     </div>
@@ -150,8 +190,12 @@ overflow: hidden;
           <p class="w3-opacity"></p>
           <p>Front end extraordinaire. Digital architect.</p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/abdulhalim-zeynu"></a><i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/abdulhalim-zeynu" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity" target="_blank"></a></i>LinkedIn</button></p>
         </div>
       </div>
     </div>
@@ -163,8 +207,12 @@ overflow: hidden;
           <p class="w3-opacity"></p>
           <p>Back end creator. Fantastic coder and researcher.</p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/simplyvpthar"></a><i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/simplyvpthar" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity" target="_blank"></a></i>LinkedIn</button></p>
         </div>
       </div>
     </div>
@@ -176,8 +224,12 @@ overflow: hidden;
           <p class="w3-opacity"></p>
           <p>Excellent back end. API wizard.</p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/marcuspramirez"></a><i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/marcuspramirez" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity" target="_blank"></a></i>LinkedIn</button></p>
+
         </div>
       </div>
     </div>

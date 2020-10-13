@@ -10,59 +10,85 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Sign in</title>
   <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 
-    body, html {
-      height: 100%;
-      line-height: 1.8;
-    }
-
-	/* Animation */
-.anim-typewriter{
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
+body, html {
+  height: 100%;
+  line-height: 1.8;
 }
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 24em;}
+
+.w3-bar .w3-button {
+  padding: 16px;
+  font-weight: bold;
 }
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255, 255, 255,.75);}
-  to{border-right-color: transparent;}
+
+.bgimg {
+  background-image: url('/imgs/united_nations.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+} 
+
+@media screen and (min-width: 480px) {
+    .fadeContainer {
+background-color: rgb(55, 49, 49);
+opacity: 0.9;
+width: inherit;
+}
 }
 
 .w3-tag {
-    animation: reverse;
+animation: reverse;
+}
+
+
+.here {
+  color: rgba(249, 100, 244, 0.988);
+  
 }
 
 .line-1{
-    position: relative;
-    top: 50%;  
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
+position: relative;
+top: 50%;  
+width: 24em;
+margin: 0 auto;
+border-right: 2px solid rgba(255,255,255,.75);
+font-size: 180%;
+text-align: center;
+white-space: nowrap;
+overflow: hidden;
+transform: translateY(-50%);    
 }
 
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+         blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
 
-	.bgimg {
-      background-image: url('/imgs/united_nations.jpg');
-      min-height: 100%;
-      background-position: center;
-      background-size: cover;
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-    }
-    
-    .w3-bar .w3-button {
-    padding: 16px;
-    font-weight: bold;
-    }
+.rotate {
+animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(359deg);
+}
+}
+
 
     @media screen and (min-width: 480px) {
         .fadeContainer {
@@ -80,6 +106,7 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 10px;
+  margin-top: -100px;
 }
 
     </style>
@@ -91,10 +118,10 @@
 and is wrapped around the whole page content, except for the footer in this example -->
 
     <!-- Header -->
-    <header class="w3-container w3-center w3-padding-48 w3-white">
-      <h1 class="w3-xxxlarge"><b>THE BRACKETEERS</b></h1>
+    <header class="w3-container w3-center w3-padding-35 w3-white">
+      <h1 class="w3-xlarge"><b>THE BRACKETEERS</b></h1>
       <h6>COUNTRY VS COUNTRY</h6> 
-      <br><br>
+      <br>
       <span class="w3-tag line-1 anim-typewriter">LET THE GAMES BEGIN...</span>
     </header>
 

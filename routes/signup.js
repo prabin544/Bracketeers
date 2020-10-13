@@ -8,7 +8,6 @@ router.use(function (req, res, next){
     console.log("I am in signup router");
     next();
 })
-
 router
     .route("/")
     .get((req, res)=> {
@@ -20,3 +19,4 @@ router
     });
 
 module.exports = router;
+

@@ -6,23 +6,66 @@ body, html {
   line-height: 1.8;
 }
 
+.tcontainer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
   background-size: cover;
   background-image: url("./imgs/runners.jpg");
   min-height: 100%;
+  padding-bottom: 30px;
 }
 
 .w3-bar .w3-button {
   padding: 16px;
+  text-decoration: none;
 }
+
+.rotate {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+  {{!-- animation: rotation 8s infinite linear;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} --}} --}}
+
+.w3-right {
+  padding-bottom: 10px;
+}
+
+.w3-top {
+overflow: hidden;
+}
+.main-div{
+  padding:none;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+
 #logo{
   width: 60px;
   height: 60px;
   padding-left: 20px;
 }
+
 </style>
+
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
     
@@ -35,6 +78,15 @@ body, html {
   <div class="ticker-item">Ready to play?</div>
 </div></div></div>  
 
+
+    <a href="#home"> <img src="/imgs/pinkglobe.JPG" class="rotate w3-left" width="70" height="60"></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="/home" class="w3-bar-item w3-button">HOME
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="/countries" class="w3-bar-item w3-button">ALL COUNTRIES</a>
+      <a href="/countries/add" class="w3-bar-item w3-button">ADD COUNTRY</a>
+
     {{!-- <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a> --}}
     <img src="./imgs/logo.JPG" alt="logo" id="logo">
     <!-- Right-sided navbar links -->
@@ -43,6 +95,7 @@ body, html {
       <a href="/home" class="w3-bar-item w3-button">HOME</a>
       <a href="/countries" class="w3-bar-item w3-button">ALL COUNTRIES</a>
       <a href="/countries/add" class="w3-bar-item w3-button">ADD COUNTRY</a>
+
 
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -54,7 +107,13 @@ body, html {
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">CLOSE ×</a>
+  {{!-- <a href="#about" onclick="()" class="w3-bar-item w3-button">ABOUT</a> --}}
+  <a href="/home" onclick="w3_close()" class="w3-bar-item w3-button">HOME
+
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
   <a href="/countries" onclick="w3_close()" class="w3-bar-item w3-button">ALL COUNTRIES</a>
   <a href="/countries/add" onclick="w3_close()" class="w3-bar-item w3-button">ADD COUNTRY</a>
@@ -62,6 +121,13 @@ body, html {
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+
+  <div class="w3-display-left w3-text-white" style="padding:140px">
+    <span class="w3-jumbo w3-hide-small">Country vs. Country</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Country vs. Country</span><br>
+    <span class="w3-large">In an epic bid for world domination, there can only be one winner.<p>Which country will rule?<p>Enter the playoffs to find out!</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Start today!</a></p>
+
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
@@ -70,17 +136,18 @@ body, html {
 
 
     <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Start playoff!</a></p>
+
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
   </div>
 </header>
 
-<!-- About Section -->
+<div></div>
 
 <!-- Team Section -->
 <div class="w3-container" style="padding:128px 16px" id="team">
   <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
+  <p class="w3-center w3-large">The ones who runs the world</p>
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
@@ -88,11 +155,12 @@ body, html {
         <div class="w3-container">
           <h3>Prabin Singh</h3>
           <p class="w3-opacity"></p>
-          <p>Genius at the back end</p>
+          <p>Genius at the back end. Master of Github. </p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/prabin544" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
-      
+
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/prabin544"></a><i class="fa fa-github"></i>Github</button></p>
+
+            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
         </div>
       </div>
     </div>
@@ -102,6 +170,11 @@ body, html {
         <div class="w3-container">
           <h3>Teresa Heidt</h3>
           <p class="w3-opacity"></p>
+
+          <p>Front end specialist. Animation expert and quality control.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href="mailto:teresaheidt@hotmail.com"></a><i class="fa fa-envelope"></i> Contact</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href='https://github.com/teresaheidt' target="_blank"></a> <i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href='https://www.linkedin.com/in/teresa-heidt-a2a4641/' target="_blank"></a> <i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
           <p>Front end</p>
           <p><button class="w3-button w3-light-grey w3-block"><a href="mailto:teresaheidt@hotmail.com"><i class="fa fa-envelope"></i> Contact</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><a href='https://github.com/teresaheidt' target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
@@ -115,8 +188,12 @@ body, html {
         <div class="w3-container">
           <h3>Abu Zeynu</h3>
           <p class="w3-opacity"></p>
-          <p>Front end extraordinaire</p>
+          <p>Front end extraordinaire. Digital architect.</p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/abdulhalim-zeynu"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/abdulhalim-zeynu" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity" target="_blank"></a></i>LinkedIn</button></p>
         </div>
@@ -128,8 +205,12 @@ body, html {
         <div class="w3-container">
           <h3>Vanh Tharavong</h3>
           <p class="w3-opacity"></p>
-          <p>Back end creator</p>
+          <p>Back end creator. Fantastic coder and researcher.</p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/simplyvpthar"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
+
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/simplyvpthar" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity" target="_blank"></a></i>LinkedIn</button></p>
         </div>
@@ -141,10 +222,14 @@ body, html {
         <div class="w3-container">
           <h3>Marcus Ramirez</h3>
           <p class="w3-opacity"></p>
-          <p>Back end brilliance</p>
+          <p>Excellent back end. API wizard.</p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+
+          <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/marcuspramirez"></a><i class="fa fa-github"></i>Github</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity"></i>LinkedIn</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/marcuspramirez" target="_blank"></a><i class="fa fa-github"></i>Github</button></p>
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-linkedin w3-hover-opacity" target="_blank"></a></i>LinkedIn</button></p>
+
         </div>
       </div>
     </div>
@@ -160,36 +245,16 @@ body, html {
   </div>
 </div>
 
-<!-- Skills Section -->
-<div class="w3-container w3-light-grey w3-padding-64">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      
-    
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Image of location/map -->
-    <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
-  </div>
-</div>
-
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <a href="#home" class="w3-button w3-center w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  <p><a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green"></a></p>
 </footer>
- 
+
+</div>
+
+
 <script>
 // Modal Image Gallery
 function onClick(element) {
@@ -198,7 +263,6 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");

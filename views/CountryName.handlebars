@@ -8,13 +8,20 @@
          <p class="year"><i class="fa fa-star"></i> 2020 <i class="fa fa-star"></i></p>
      <p>Ballin' Outta Control</p>
    </div>
+
     </header>
+
     <section id="bracket">
-    <button id="startBtn">ADD THE COUNTRY</button>
+
+    <button id="startBtn" class="center">ADD YOUR COUNTRY</button>
     <br><br>
     <button id="playBtn">PLAY GAME</button>
     <div class="container" id="firstcontainer">
     <div class="split split-one">
+     
+
+
+        
         <div class="round round-one current">
             <div class="round-details">Round 1<br/><span class="date"></span></div>
             <ul class="matchup">
@@ -71,10 +78,11 @@
             <ul class ="matchup championship">
                 <li class="team team-top">&nbsp;<span class="vote-count">&nbsp;</span></li>
             </ul>
-        </div>
-        <button id="firstround" class="finalscore">FINAL</button> 
-    </div>
 
+        {{!-- final score button --}}
+        </div>
+        <button onclick="playAudio()" type="button" id="myAudio" src="cheering(2).mp4" class="finalscore">FINAL</button> 
+        </div>
 
     <div class="split split-two">
 
@@ -85,7 +93,7 @@
                 <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
                 <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
             </ul>   
-            <button id="firstround">ROUND 3</button>                        
+            {{!-- <button id="firstround1"></button>                         --}}
         </div>  <!-- END ROUND THREE -->    
 
         <div class="round round-two">
@@ -98,7 +106,7 @@
                 <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
                 <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
             </ul><br>   
-            <button id="firstround">ROUND 2</button> 
+            {{!-- <button id="firstround1"></button>  --}}
                                     
         </div>  <!-- END ROUND TWO -->
         <div class="round round-one current">
@@ -119,7 +127,7 @@
                 <li class="team team-top"><span class="score">36</span></li>
                 <li class="team team-bottom"><span class="score">40</span></li>
             </ul><br>           
-            <button id="firstround">ROUND 1</button>                        
+            {{!-- <button id="firstround"></button>                         --}}
         </div>  <!-- END ROUND ONE -->                          
     </div>
     </div>
@@ -131,5 +139,7 @@
     </section>
 </div>
 <script src="playgame.js"></script>
+
+
     
   

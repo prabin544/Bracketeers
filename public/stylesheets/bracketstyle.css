@@ -117,10 +117,13 @@ body {font-family: 'Istok Web', sans-serif;background: url("http://picjumbo.com/
   border-radius: 15px;
   background-color: #000;
   font-family: 'Holtwood One SC', serif;
+ 
   /* font-weight: normal;font-size: 4.4em;margin:0 0 10px; text-shadow:0 0 10px rgba(0, 0, 0, 0.5);text-transform: uppercase;letter-spacing:-1px; */
 }
 
-#playBtn {
+button:focus {outline:0;}
+
+#playBtn, #firstround, #secondround, #thirdround {
   margin-left: 20px;
   font-size: 18px;
   margin-bottom: 30px;
@@ -131,11 +134,11 @@ body {font-family: 'Istok Web', sans-serif;background: url("http://picjumbo.com/
   /* font-weight: normal;font-size: 4.4em;margin:0 0 10px; text-shadow:0 0 10px rgba(0, 0, 0, 0.5);text-transform: uppercase;letter-spacing:-1px; */
 }
 
-#firstround {
+/* #firstround {
   color: #000;
   background-color: #5CCA87;
   font-family: 'Holtwood One SC', serif;
-}
+} */
 
 .finalscore {
   font-size: 36px;

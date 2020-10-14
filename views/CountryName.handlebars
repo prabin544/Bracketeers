@@ -12,17 +12,35 @@
     </header>
 
     <section id="bracket">
+        <div class="w3-row">
+        <div class="col-3 center w3-third w3-container"> <button id="startBtn">ADD YOUR COUNTRY</button></div>
+    </div>
 
-    <button id="startBtn" class="center">ADD YOUR COUNTRY</button>
+    {{!-- <div class="w3-row">
+    <div class="w3-third w3-container">
+        <h2></h2>
+    </div>
+    <div class="w3-third w3-container w3-center">
+        <button id="startBtn">ADD YOUR COUNTRY</button>
+    </div>
+    <div class="w3-third w3-container"> --}}
+        {{!-- <h2></h2> --}}
+    {{!-- </div>
+    </div> --}}
     <br><br>
-    <button id="playBtn">PLAY GAME</button>
+
+    <div class="row">
+        <div class="col-3"> <button id="playBtn">PLAY GAME</button></div>
+        <div class="col-3"> <button id="firstround">ROUND 1</button></div>
+        <div class="col-3"> <button id="secondround">ROUND 2</button></div>
+        <div class="col-3"> <button id="thirdround">ROUND 3</button></div>
+    </div>
+
     <div class="container" id="firstcontainer">
     <div class="split split-one">
-     
-
-
         
         <div class="round round-one current">
+         
             <div class="round-details">Round 1<br/><span class="date"></span></div>
             <ul class="matchup">
                 <li class="team team-top" id="first"><span class="country"></span><span class="score"></span></li>
@@ -40,7 +58,7 @@
                 <li class="team team-top" id="seventh"><span class="country"></span><span class="score"></span></li>
                 <li class="team team-bottom" id="eighth"><span class="country"></span><span class="score"></span></li>
             </ul><br>           
-            <button id="firstround">ROUND 1</button>              
+                     
         </div>  <!-- END ROUND ONE -->
 
         <div class="round round-two">
@@ -53,7 +71,7 @@
                 <li class="team team-top" id="frw3">&nbsp;<span class="score">&nbsp;</span></li>
                 <li class="team team-bottom" id="frw4">&nbsp;<span class="score">&nbsp;</span></li>
             </ul><br>   
-            <button id="firstround">ROUND 2</button>                         
+                        
         </div>  <!-- END ROUND TWO -->
         
         <div class="round round-three">
@@ -61,8 +79,7 @@
             <ul class="matchup">
                 <li class="team team-top" id="srw1">&nbsp;<span class="score">&nbsp;</span></li>
                 <li class="team team-bottom" id="srw2">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul><br>   
-            <button id="firstround">ROUND 3</button>                         
+            </ul><br>                           
         </div>  <!-- END ROUND THREE -->        
     </div> 
 

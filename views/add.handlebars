@@ -1,45 +1,19 @@
-<h2 align="center">Pick Your Teams</h2>
-
-    {{#each errors}}
-        <div class="error">
-           <p>{{text}}</p> 
-        </div>
-    {{/each}}
-
-    <div class="row">
-        <div class="col-6">
-            <form>
-                <fieldset>
-                <legend>WEST</legend>
-                    <label>Select Country</label>
-                    <select id = "myList">
-                        <option value = "Nepal" selected>Nepal</option>
-                        <option value = "England">England</option>
-                        <option value = "Italy" required>Italy</option>
-                        <option value = "Australia" disabled>Australia</option>
-                    </select>
-                </fieldset>
-                <input type="submit" value="Add Country" class="btn btn-reverse">
-            </form>
-        </div>
-        
-        <div class="col-6">
-            <form align="right">
-                <fieldset>
-                <legend>EAST</legend>
-                    <label>Select Country</label>
-                    <select id = "myList">
-                        <option value = "Nepal" selected>Nepal</option>
-                        <option value = "England">England</option>
-                        <option value = "Italy" required>Italy</option>
-                        <option value = "Australia" disabled>Australia</option>
-                    </select>
-                </fieldset>
-                <input type="submit" value="Add Country" class="btn btn-reverse">
-            </form>
-        </div>
-        
-
+<div class="row">
+    <div class="col-6">
+        <form>
+            <fieldset>
+            <legend>WEST</legend>
+                <label>Select Country</label>
+                <select id = "myList">
+                    <option value = "Nepal" selected>Nepal</option>
+                    <option value = "England">England</option>
+                    <option value = "Italy" required>Italy</option>
+                    <option value = "Australia" disabled>Australia</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Add Country" class="btn btn-reverse">
+        </form>
     </div>
-    
+
+
 

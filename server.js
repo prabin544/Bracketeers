@@ -6,12 +6,26 @@ const path = require("path");
 const bodyParser = require("body-parser");
 var session = require('express-session');
 var mysql = require('mysql2');
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : 'rootroot',
-	database : 'nodelogin'
-});
+
+
+if (process.env.JAWSDB_URL){
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+  }else{
+    connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "pravin123",
+    database: "nodelogin"
+  });
+};
+
+// var connection = mysql.createConnection({
+// 	host     : 'localhost',
+// 	user     : 'root',
+// 	password : 'pravin123',
+// 	database : 'nodelogin'
+// });
 //databae
 const db = require("./config/database");
 //Test DB

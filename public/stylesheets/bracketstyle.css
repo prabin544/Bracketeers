@@ -157,6 +157,7 @@ button:focus {outline:0;}
 .select {
   color: #5CCA87;
   font-size: 24px;
+ 
 }
 
 .card {
@@ -169,6 +170,7 @@ button:focus {outline:0;}
   background-color: #5CCA87;
   margin-bottom: 20px;
   font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 12px;
 }
 
 #myList {

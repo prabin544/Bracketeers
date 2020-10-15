@@ -20,13 +20,6 @@ if (process.env.JAWSDB_URL){
   });
 };
 
-// var connection = mysql.createConnection({
-// 	host     : 'localhost',
-// 	user     : 'root',
-// 	password : 'pravin123',
-// 	database : 'nodelogin'
-// });
-//databae
 const db = require("./config/database");
 //Test DB
 db.authenticate()

@@ -9,20 +9,6 @@ $(document).ready(function(){
             $(selector).text(countries[i]);
         }
 
-        // places.forEach(place => {
-        //     for (let i = 0; i < countries.length; i++) {
-        //         return $('#' + place + '.country').text(countries[i]);
-        //     }
-        // $("#first .country").text(countries[0]);
-        // $("#second .country").text(countries[1]);
-        // $("#third .country").text(countries[2]);
-        // $("#fourth .country").text(countries[3]);
-        // $("#fifth .country").text(countries[4]);
-        // $("#sixth .country").text(countries[5]);
-        // $("#seventh .country").text(countries[6]);
-        // $("#eighth .country").text(countries[7]);
-
-
     });
 
     $("#playBtn").click(function(){

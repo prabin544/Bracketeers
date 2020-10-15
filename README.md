@@ -39,9 +39,15 @@ Prabin Singh, Teresa Heidt, Abu Zeynu, Vanh Tharavong and Marcus Ramirez.
 Sequelize, Node, Bootstrap, W3 Schools framework, Handlebars, JawsDB.
 
 ## Imgs
-![screenshot](public/imgs/homescreen.png)
+Welcome to the login page! The USER enters in their email and password and they see a scroll at the top, 'Let the games begin..', as a forerunner of what is to come. 
 
 ![screenshot](public/imgs/login.png)
+
+The main page, or homescreen, is where the USER can view ALL COUNTRIES - where the game is played, ADD COUNTRY - where the user chooses their countries they want to play, and the use can view the TEAM.
+
+![screenshot](public/imgs/homescreen.png)
+
+The BRACKETS page - where the game is played. There are three rounds and the user can ADD their countries and then click PLAY GAME to start. The FINAL button is the CHAMPIONSHIP round and when the button is clicked, APPLAUSE is heard.
 
 ![screenshot](public/imgs/bracketspage.png)
 

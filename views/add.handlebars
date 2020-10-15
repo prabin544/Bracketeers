@@ -1,19 +1,79 @@
-<div class="row">
-    <div class="col-6">
-        <form>
-            <fieldset>
-            <legend>WEST</legend>
-                <label>Select Country</label>
-                <select id = "myList">
-                    <option value = "Nepal" selected>Nepal</option>
-                    <option value = "England">England</option>
-                    <option value = "Italy" required>Italy</option>
-                    <option value = "Australia" disabled>Australia</option>
-                </select>
-            </fieldset>
-            <input type="submit" value="Add Country" class="btn btn-reverse">
-        </form>
+<link rel="stylesheet" href="/stylesheets/bracketstyle.css">
+<div class="container-fluid main-div">
+<header class="hero">
+    <div class="hero-wrap">
+     <p class="intro" id="intro">Bracketeers</p>
+     <br>
+         <h1 id="headline">Add Your Country</h1>
+         <p class="year"><i class="fa fa-star"></i> 2020 <i class="fa fa-star"></i></p>
+     <p>Ballin' Outta Control</p>
+   </div>
+
+<h2 align="center">Pick Your countries</h2>
+
+   <section id="bracket">
+        <div class="w3-row">
+        <div class="col-3 center w3-third w3-container"></div>
+        <a href="/login.html" class="homeBtn">HOME</a>
+        </div>
+
+    <br><br>
+
+    <div class="row">
+   
     </div>
 
+    {{#each errors}}
+        <div class="error">
+           <p>{{text}}</p> 
+        </div>
+    {{/each}}
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+            <form>
+                <fieldset>
+                <legend class="west">EAST</legend>
+                    <label class="select">Select Country</label>
+                    <select id = "myList">
+                        <option value = "Nepal" selected>Nepal</option>
+                        <option value = "England">England</option>
+                        <option value = "Italy" required>Italy</option>
+                        <option value = "Australia" disabled>Australia</option>
+                    </select>
+                </fieldset>
+                <br>
+                <input class="countryBtn" type="submit" value="Add Country" class="btn btn-reverse">
+            </form>
+            </div>
+        </div>
+        
+        <div class="col-6">
+            <div class="card">
+            <form align="center">
+                <fieldset>
+                <legend class="east">WEST</legend>
+                    <label class="select">Select Country</label>
+                    <select id = "myList">
+                        <option value = "Nepal" selected>Nepal</option>
+                        <option value = "England">England</option>
+                        <option value = "Italy" required>Italy</option>
+                        <option value = "Australia" disabled>Australia</option>
+                    </select>
+                </fieldset>
+                <br>
+                <input class="countryBtn" type="submit" value="Add Country" class="btn btn-reverse">
+            </form>
+            </div>
+            </div>
+    </div>
+    
+    <section class="share">
+          
+    </section>
 
 
+    <div class="share-wrap">
+            <p class="intro" id="intro">Good luck!</p>
+    </div>

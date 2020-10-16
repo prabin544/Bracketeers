@@ -87,6 +87,9 @@ overflow: hidden;
 .team {
   font-style: italic;
 }
+.fa-users, .fa-home{
+  padding-right: 40px;
+}
 
 
 </style>
@@ -106,11 +109,11 @@ overflow: hidden;
     <a href="#home"> <img src="/imgs/darkglobe.JPG" class="rotate w3-left" width="70" height="60"></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="/home" class="w3-bar-item w3-button">HOME
-      <a href="#team" class="w3-bar-item w3-button"></i> TEAM</a>
+      <a href="/home" class="w3-bar-item w3-button"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+      <a href="#team" class="w3-bar-item w3-button"></i><i class="fa fa-users fa-2x" aria-hidden="true"></i></a>
       {{!-- <i class="fa fa-user"></i> --}}
-      <a href="/countries" class="w3-bar-item w3-button">ALL COUNTRIES</a>
-      <a href="/countries/add" class="w3-bar-item w3-button">ADD COUNTRY</a>
+      {{!-- <a href="/countries" class="w3-bar-item w3-button">ALL COUNTRIES</a> --}}
+      {{!-- <a href="/countries/add" class="w3-bar-item w3-button">ADD COUNTRY</a> --}}
 
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -124,11 +127,11 @@ overflow: hidden;
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">CLOSE ×</a>
   {{!-- <a href="#about" onclick="()" class="w3-bar-item w3-button">ABOUT</a> --}}
-  <a href="/home" onclick="w3_close()" class="w3-bar-item w3-button">HOME
+  <a href="/home" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">CLOSE ×</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="/countries" onclick="w3_close()" class="w3-bar-item w3-button">ALL COUNTRIES</a>
-  <a href="/countries/add" onclick="w3_close()" class="w3-bar-item w3-button">ADD COUNTRY</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a>
+  {{!-- <a href="/countries" onclick="w3_close()" class="w3-bar-item w3-button">ALL COUNTRIES</a> --}}
+  {{!-- <a href="/countries/add" onclick="w3_close()" class="w3-bar-item w3-button">ADD COUNTRY</a> --}}
 </nav>
 
 <!-- Header with full-height image -->
@@ -138,7 +141,7 @@ overflow: hidden;
     <span class="w3-allerta w3-hide-large w3-hide-medium" style="text-shadow: 4px 4px 0 rgb(45, 43, 43);">Country vs. Country</span><br>
     <span class="w3-xlarge" style="text-shadow: 1px 2px 0 rgb(45, 43, 43);">In an epic bid for world domination, there can only be one winner.
     <p>Which country will rule?<p>Enter the playoffs to find out!</span>
-    <p><a href="#about" 
+    <p><a href="/countries/add" 
     class="w3-xlarge w3-button w3-aqua w3-text-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off" 
     style="text-shadow: 2px 2px 0 rgb(43, 42, 42);">Play today!</a></p>
 

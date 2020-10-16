@@ -15,17 +15,20 @@ $(document).ready(function () {
             event.preventDefault();
             console.log(([...$('#dropdown option')].find(select => select.selected).value.replace('_', " ")));
             var selected = ([...$('#dropdown option')].find(select => select.selected).value.replace('_', " "));
-            $.ajax({
-                url: "http://localhost:8090/addeast",
-                type: "POST",
-                data: {
-                    'ID': 10,
-                    'Name': selected,
-                },
-                success: function(data){
-                    console.log(data);
-                }
-            });
+            // $.ajax({
+            //     url: "http://localhost:8090/addeast",
+            //     type: "POST",
+            //     data: {
+            //         'Name': selected,
+            //     },
+            //     success: function(data){
+            //         console.log(data);
+            //     }
+            // });
+            $.post("/addeast", {'Name': selected})
+                .then(function(){
+                    console.log("Added country");
+                });
           
         });
 
@@ -35,17 +38,20 @@ $(document).ready(function () {
             console.log(([...$('#dropdown-two option')].find(select => select.selected).value.replace('_', " ")));
             var selected = ([...$('#dropdown-two option')].find(select => select.selected).value.replace('_', " "));
             console.log(selected);
-            $.ajax({
-                url: "http://localhost:8090/addwest",
-                type: "POST",
-                data: {
-                    'ID': 0,
-                    'Name': selected,
-                },
-                success: function(data){
-                    console.log(data);
-                }
-            });
+            // $.ajax({
+            //     url: "http://localhost:8090/addwest",
+            //     type: "POST",
+            //     data: {
+            //         'Name': selected,
+            //     },
+            //     success: function(data){
+            //         console.log(data);
+            //     }
+            // });
+            $.post("/addwest", {'Name': selected})
+                .then(function(){
+                    console.log("Added country");
+                });
         });
         // console.log(results);
         // Putting place holder text in the drop-down menu

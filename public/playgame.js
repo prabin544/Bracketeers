@@ -1,3 +1,7 @@
+function getrandscore(){
+    return (Math.floor(Math.random() * 100) + 1)
+}
+
 $(document).ready(function(){
 
     // $.get("/alleast")
@@ -52,20 +56,23 @@ $(document).ready(function(){
         })
     }
 
+    // let randnum = [];
+    // for (let i = 0; i < 16; i++) {
+    //     randnum.push(Math.floor(Math.random() * 100) + 1)
+    // }
+    
     $("#playBtn").click(function(){
-        var randnum = Math.floor(Math.random() * 100);
-        $("#first .score").text(randnum);
-        $("#second .score").text("58");
-        $("#third .score").text("2");
-        $("#fourth .score").text("4");
-        $("#fifth .score").text("22");
-        $("#sixth .score").text("40");
-        $("#seventh .score").text("5");
-        $("#eighth .score").text("7");
-
+        for (let i = 0; i < 8; i++) {
+            var selector = '#' + eastplaces[i] + ' .score';
+            $(selector).text(getrandscore());
+        }
+        for (let i = 0; i < 8; i++) {
+            var selector = '#' + westplaces[i] + ' .score';
+            $(selector).text(getrandscore());
+        }
     });
 
-    $("#firstround").click(function(){
+    $("#firstround").click(function(){        
         var firstscore = parseInt($("#first .score").text());
         var secondscore = parseInt($("#second .score").text());
         var thirdscore = parseInt($("#third .score").text());
@@ -74,27 +81,158 @@ $(document).ready(function(){
         var sixthscore = parseInt($("#fourth .score").text());
         var sevenththscore = parseInt($("#fourth .score").text());
         var eighthscore = parseInt($("#fourth .score").text());
-        
+   
         if (firstscore > secondscore){
-            $("#frw1").text($("#first .country").text());
+            $("#efrw1 .country").text($("#first .country").text());
+
         }else{
-            $("#frw1").text($("#second .country").text());
+            $("#efrw1 .country").text($("#second .country").text());
         }
         if (thirdscore > fourthscore){
-            $("#frw2").text($("#third .country").text());
+            $("#efrw2 .country").text($("#third .country").text());
         }else{
-            $("#frw2").text($("#fourth .country").text());
+            $("#efrw2 .country").text($("#fourth .country").text());
         }
         if (fifthscore > sixthscore){
-            $("#frw3").text($("#fifth .country").text());
+            $("#efrw3 .country").text($("#fifth .country").text());
         }else{
-            $("#frw3").text($("#sixth .country").text());
+            $("#efrw3 .country").text($("#sixth .country").text());
         }
         if (sevenththscore > eighthscore){
-            $("#frw4").text($("#seventh .country").text());
+            $("#efrw4 .country").text($("#seventh .country").text());
         }else{
-            $("#frw4").text($("#eighth .country").text());
+            $("#efrw4 .country").text($("#eighth .country").text());
         }
+        for (let i = 1; i <= 4; i++) {
+            var selector = '#efrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+        var firstscore = parseInt($("#ninth .score").text());
+        var secondscore = parseInt($("#tenth .score").text());
+        var thirdscore = parseInt($("#eleventh .score").text());
+        var fourthscore = parseInt($("#twelevth .score").text());
+        var fifthscore = parseInt($("#thirteenth .score").text());
+        var sixthscore = parseInt($("#fourteenth .score").text());
+        var sevenththscore = parseInt($("#fifteenth .score").text());
+        var eighthscore = parseInt($("#sixteenth .score").text());
+   
+        if (firstscore > secondscore){
+            $("#wfrw1 .country").text($("#ninth .country").text());
 
+        }else{
+            $("#wfrw1 .country").text($("#tenth .country").text());
+        }
+        if (thirdscore > fourthscore){
+            $("#wfrw2 .country").text($("#eleventh .country").text());
+        }else{
+            $("#wfrw2 .country").text($("#twelevth .country").text());
+        }
+        if (fifthscore > sixthscore){
+            $("#wfrw3 .country").text($("#thirteenth .country").text());
+        }else{
+            $("#wfrw3 .country").text($("#fourteenth .country").text());
+        }
+        if (sevenththscore > eighthscore){
+            $("#wfrw4 .country").text($("#fifteenth .country").text());
+        }else{
+            $("#wfrw4 .country").text($("#sixteenth .country").text());
+        }
+        for (let i = 1; i <= 4; i++) {
+            var selector = '#wfrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+    });
+
+    $("#secondround").click(function(){        
+        var firstscore = parseInt($("#efrw1 .score").text());
+        var secondscore = parseInt($("#efrw2 .score").text());
+        var thirdscore = parseInt($("#efrw3 .score").text());
+        var fourthscore = parseInt($("#efrw4 .score").text());
+        console.log(firstscore);
+        console.log(secondscore);
+        if (firstscore > secondscore){
+            $("#esrw1 .country").text($("#efrw1 .country").text());
+
+        }else{
+            $("#esrw1 .country").text($("#efrw2 .country").text());
+        }
+        if (thirdscore > fourthscore){
+            $("#esrw2 .country").text($("#efrw3 .country").text());
+        }else{
+            $("#esrw2 .country").text($("#efrw4 .country").text());
+        }
+        for (let i = 1; i <= 4; i++) {
+            var selector = '#esrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+        var firstscore = parseInt($("#wfrw1 .score").text());
+        var secondscore = parseInt($("#wfrw2 .score").text());
+        var thirdscore = parseInt($("#wfrw3 .score").text());
+        var fourthscore = parseInt($("#wfrw4 .score").text());
+        console.log(firstscore);
+        console.log(secondscore);
+        if (firstscore > secondscore){
+            $("#wsrw1 .country").text($("#wfrw1 .country").text());
+
+        }else{
+            $("#wsrw1 .country").text($("#wfrw2 .country").text());
+        }
+        if (thirdscore > fourthscore){
+            $("#wsrw2 .country").text($("#efrw3 .country").text());
+        }else{
+            $("#wsrw2 .country").text($("#efrw4 .country").text());
+        }
+        for (let i = 1; i <= 4; i++) {
+            var selector = '#wsrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+    });
+    $("#thirdround").click(function(){        
+        var firstscore = parseInt($("#esrw1 .score").text());
+        var secondscore = parseInt($("#esrw2 .score").text());
+        console.log(firstscore);
+        console.log(secondscore);
+        if (firstscore > secondscore){
+            $("#etrw1 .country").text($("#esrw1 .country").text());
+
+        }else{
+            $("#etrw1 .country").text($("#esrw2 .country").text());
+        }
+        for (let i = 1; i <= 1; i++) {
+            var selector = '#etrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+        var firstscore = parseInt($("#wsrw1 .score").text());
+        var secondscore = parseInt($("#wsrw2 .score").text());
+        console.log(firstscore);
+        console.log(secondscore);
+        if (firstscore > secondscore){
+            $("#wtrw1 .country").text($("#wsrw1 .country").text());
+
+        }else{
+            $("#wtrw1 .country").text($("#wsrw2 .country").text());
+        }
+        for (let i = 1; i <= 1; i++) {
+            var selector = '#wtrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+    });
+    $(".finalscore").click(function(){  
+        console.log("Hello");      
+        var firstscore = parseInt($("#etrw1 .score").text());
+        var secondscore = parseInt($("#etrw2 .score").text());
+        
+        console.log(secondscore);
+        if (firstscore > secondscore){
+            $("#etrw1 .country").text($("#esrw1 .country").text());
+
+        }else{
+            $("#etrw1 .country").text($("#esrw2 .country").text());
+        }
+        for (let i = 1; i <= 1; i++) {
+            var selector = '#etrw' + i + ' .score';
+            $(selector).text(getrandscore());
+        }
+        
     });
 });

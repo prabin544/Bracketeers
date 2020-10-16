@@ -46,7 +46,9 @@ module.exports = function(app) {
         var sql = "INSERT INTO eastcountry(countryName) VALUES (?)";
         mysqlConnection.query(sql, [req.Name],  (err, rows, fields) => {
             if (!err) {
-                response.send(rows);
+                response.send({rows: rows, message: 'Success'});
+            }else{
+              response.send({message: 'Failed'})
             }
         });
     });

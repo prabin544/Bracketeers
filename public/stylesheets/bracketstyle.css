@@ -182,7 +182,18 @@ button:focus {outline:0;}
   color: #5CCA87;
   background-color: #000;
   font-family: 'Roboto Condensed', sans-serif;
-  margin-right: 400px;
+  margin-right: 470px;
+  font-size: x-large;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 12px;
+}
+
+.playoffBtn {
+  color: #5CCA87;
+  background-color: #000;
+  font-family: 'Roboto Condensed', sans-serif;
+  
   font-size: x-large;
   padding-right: 10px;
   padding-left: 10px;

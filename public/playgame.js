@@ -1,15 +1,56 @@
 $(document).ready(function(){
 
-    countries = ["Nepal", "Britain", "India", "USA", "Australia", "Japan", "China", "Italy"];
-    places = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]
+    // $.get("/alleast")
+    //     .then(function(){
+    //         console.log("success");
+    //     });
+    eastcountries = [];
+    westcountries = [];
+    //countries = ["Nepal", "Britain", "India", "USA", "Australia", "Japan", "China", "Italy"];
+    eastplaces = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]
+    westplaces = ["ninth", "tenth", "eleventh", "twelevth", "thirteenth", "fourteenth", "fifteenth", "sixteenth"]
 
-    $("#startBtn").click(function(){
-        for (let i = 0; i < countries.length; i++) {
-            var selector = '#' + places[i] + ' .country';
-            $(selector).text(countries[i]);
-        }
+    $("#startBtn").click(function(event){
+        event.preventDefault();
+        ajaxGet();
+        // for (let i = 0; i < countries.length; i++) {
+        //     var selector = '#' + places[i] + ' .country';
+        //     $(selector).text(countries[i]);
+        // }
 
     });
+
+    function ajaxGet(){
+        $.ajax({
+            type: "GET",
+            url:"/alleast",
+            success: function(result){
+                $.each(result, function(i, country){
+                    eastcountries.push(country.countryName)
+                    for (let i = 0; i < eastcountries.length; i++) {
+                        var selector = '#' + eastplaces[i] + ' .country';
+                        $(selector).text(eastcountries[i]);
+                    }
+                });
+                
+                console.log(eastcountries);
+            }
+        })
+        $.ajax({
+            type: "GET",
+            url:"/allwest",
+            success: function(result){
+                $.each(result, function(i, country){
+                    westcountries.push(country.countryName)
+                    for (let i = 0; i < westcountries.length; i++) {
+                        var selector = '#' + westplaces[i] + ' .country';
+                        $(selector).text(westcountries[i]);
+                    }
+                });
+                console.log(westcountries);
+            }
+        })
+    }
 
     $("#playBtn").click(function(){
         var randnum = Math.floor(Math.random() * 100);

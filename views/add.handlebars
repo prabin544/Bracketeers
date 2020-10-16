@@ -14,7 +14,7 @@
    <section id="bracket">
         <div class="w3-row">
         <div class="col-3 center w3-third w3-container"></div>
-        <a href="/login.html" class="homeBtn">HOME</a>
+        <a href="/home" class="homeBtn"><i class="fa fa-home" aria-hidden="true"></i></a>
         </div>
 
     <br><br>
@@ -26,12 +26,11 @@
     <div class="row">
         <div class="col-6" id="dropdown">
             <div class="card">
-            <form>
+            <form action="/addeast" method="POST">
                 <fieldset>
                 <legend class="west">EAST</legend>
                     <label class="select">Select Country</label>
-                    <select id = "myList">
-                    </select>
+                    <select id = "myList"></select>
                 </fieldset>
                 <br>
                 <input class="countryBtn" id="eastBtn" type="submit" value="Add Country" class="btn btn-reverse">
@@ -41,7 +40,7 @@
         
         <div class="col-6" id="dropdown-two">
             <div class="card">
-            <form align="center">
+            <form align="center" action="/addwest" method="POST">
                 <fieldset>
                 <legend class="east">WEST</legend>
                     <label class="select">Select Country</label>
@@ -60,6 +59,8 @@
     </section>
 
     <div class="share-wrap">
+        <a href="/countries" class="playoffBtn">Playoff</a>
             <p class="intro" id="intro">Good luck!</p>
     </div>
+    
     <script src="../populate.js"></script>

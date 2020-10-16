@@ -12,7 +12,11 @@
 
     <section id="bracket">
         <div class="w3-row">
-        <div class="col-3 center w3-third w3-container"> <button id="startBtn">ADD YOUR COUNTRY</button></div>
+        <div class="col-3  w3-third w3-container"> <button id="startBtn">ADD YOUR COUNTRY</button></div>
+        {{!-- <div class="col-3  w3-third w3-container"><a href="/countries/add"></a> <button id="startBtn">ChOOSE NEW COUNTRIES?</button></div> --}}
+        <a href="/countries/add" class="homeBtn">ChOOSE NEW COUNTRIES?</a>
+        <a href="/home" class="homeBtn"><i class="fa fa-home" aria-hidden="true"></i></a>
+        
         </div>
 
     <br><br>
@@ -117,20 +121,20 @@
         <div class="round round-one current">
             <div class="round-details">Round 1<br/><span class="date"></span></div>
             <ul class="matchup">
-                <li class="team team-top"><span class="score">62</span></li>
-                <li class="team team-bottom"><span class="score">54</span></li>
+                <li class="team team-top" id="ninth"><span class="country"></span><span class="score"></span></li>
+                <li class="team team-bottom" id="tenth"><span class="country"></span><span class="score"></span></li>
             </ul>
             <ul class="matchup">
-                <li class="team team-top"><span class="score">68</span></li>
-                <li class="team team-bottom"><span class="score">66</span></li>
+                <li class="team team-top" id="eleventh"><span class="country"></span><span class="score"></span></li>
+                <li class="team team-bottom" id="twelevth"><span class="country"></span><span class="score"></span></li>
             </ul>
             <ul class="matchup">
-                <li class="team team-top"><span class="score">64</span></li>
-                <li class="team team-bottom"><span class="score">56</span></li>
+                <li class="team team-top" id="thirteenth"><span class="country"></span><span class="score"></span></li>
+                <li class="team team-bottom" id="fourteenth"><span class="country"></span><span class="score"></span></li>
             </ul>
             <ul class="matchup">
-                <li class="team team-top"><span class="score">36</span></li>
-                <li class="team team-bottom"><span class="score">40</span></li>
+                <li class="team team-top" id="fifteenth"><span class="country"></span><span class="score"></span></li>
+                <li class="team team-bottom" id="sixteenth"><span class="country"></span><span class="score"></span></li>
             </ul><br>           
             {{!-- <button id="firstround"></button>                         --}}
         </div>  <!-- END ROUND ONE -->                          

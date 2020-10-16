@@ -30,13 +30,13 @@ const app = express();
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 //Body Parser
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 //set static foler
 app.use(express.static(path.join(__dirname, "public")))
 //Countires routes
 app.use("/countries", require ("./routes/Countries"));
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 //app.get("/home", (req, res) => res.render("index", {defaultLayout: "landing"}));
 app.use(session({
     secret: 'secret',
@@ -70,6 +70,22 @@ app.post('/auth', function(request, response) {
         response.end();
     }
 });
+
+app.post('/addEast', function(request, response) {
+    console.log(request);
+    var countryName = request.body.username;
+        connection.query('INSERT INTO eastcountry SET ?', [countryName], function(error, results, fields) {
+            if (results.length > 0) {
+                request.session.loggedin = true;
+                request.session.username = username;
+                response.redirect('/home');
+            } else {
+                response.send('Incorrect Vlues');
+            }           
+            response.end();
+        });
+});
+
 app.post('/register', function(request, response) {
     var username = request.body.username;
     var password = request.body.password;
@@ -86,42 +102,6 @@ app.post('/register', function(request, response) {
         response.send('Please enter Username and Password!');
         response.end();
     }
-});
-
-app.post('/register', function(request, response) {
-	var username = request.body.username;
-	var password = request.body.password;
-	if (username && password) {
-		connection.query('INSERT INTO accounts SET ?', {username, password}, function(error, fields) {
-			if (error) {
-				throw error;
-			}else{
-				response.redirect('/');
-			}		
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
-});
-
-app.post('/register', function(request, response) {
-	var username = request.body.username;
-	var password = request.body.password;
-	if (username && password) {
-		connection.query('INSERT INTO accounts SET ?', {username, password}, function(error, fields) {
-			if (error) {
-				throw error;
-			}else{
-				response.redirect('/');
-			}		
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
 });
 
 app.get("/home", (req, res) => res.render("index", {defaultLayout: "landing"}));

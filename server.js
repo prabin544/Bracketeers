@@ -15,7 +15,7 @@ if (process.env.JAWSDB_URL){
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "rootroot",
+    password: "pravin123",
     database: "nodelogin"
   });
 };

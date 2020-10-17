@@ -14,7 +14,8 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     user: "root",
     password: "pravin123",
-    database: "nodelogin"
+    database: "nodelogin",
+    multipleStatements: true
     });
   };
 

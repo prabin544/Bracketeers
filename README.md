@@ -36,7 +36,7 @@ We chose a very neautral palate with pops of color. The animations we input were
 Prabin Singh, Teresa Heidt, Abu Zeynu, Vanh Tharavong and Marcus Ramirez.
 
 ## Technologies used
-Sequelize, Node, Bootstrap, W3 Schools framework, Handlebars, JawsDB.
+Sequelize, Node, Bootstrap, W3 Schools framework, Handlebars, JawsDB, Bulma.
 
 ## Imgs
 Welcome to the login page! The USER enters in their email and password and they see a scroll at the top, 'Let the games begin..', as a forerunner of what is to come. 
@@ -56,3 +56,5 @@ The BRACKETS page - where the game is played. There are three rounds and the use
 [Link to Heroku](https://bracketeers.herokuapp.com/)
 
 [link to Github](https://github.com/prabin544/Bracketeers.git)
+
+[Link to Video](https://drive.google.com/file/d/1eYNhK6yNaAtqW_1e2WDOnlj0APxbxPPy/view)

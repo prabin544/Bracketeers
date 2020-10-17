@@ -42,6 +42,7 @@
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
+
 </style>
 <script>
 function showSnackbar(message) {
@@ -98,9 +99,9 @@ function showSnackbar(message) {
         <div class="col-6" id="dropdown-two">
             <div class="card">
             <form align="center" action="/addwest" method="POST">
-                <fieldset>
+                <fieldset form="form2">
                 <legend class="east">WEST</legend>
-                    <label class="select">Select Country</label>
+                    <label class="select" form="form2">Select Country</label>
                     <select id = "westList" multiple></select>
                 </fieldset>
                 <br>

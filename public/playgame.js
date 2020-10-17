@@ -148,8 +148,6 @@ $(document).ready(function(){
         var secondscore = parseInt($("#efrw2 .score").text());
         var thirdscore = parseInt($("#efrw3 .score").text());
         var fourthscore = parseInt($("#efrw4 .score").text());
-        console.log(firstscore);
-        console.log(secondscore);
         if (firstscore > secondscore){
             $("#esrw1 .country").text($("#efrw1 .country").text());
 
@@ -169,8 +167,6 @@ $(document).ready(function(){
         var secondscore = parseInt($("#wfrw2 .score").text());
         var thirdscore = parseInt($("#wfrw3 .score").text());
         var fourthscore = parseInt($("#wfrw4 .score").text());
-        console.log(firstscore);
-        console.log(secondscore);
         if (firstscore > secondscore){
             $("#wsrw1 .country").text($("#wfrw1 .country").text());
 
@@ -190,8 +186,6 @@ $(document).ready(function(){
     $("#thirdround").click(function(){        
         var firstscore = parseInt($("#esrw1 .score").text());
         var secondscore = parseInt($("#esrw2 .score").text());
-        console.log(firstscore);
-        console.log(secondscore);
         if (firstscore > secondscore){
             $("#etrw1 .country").text($("#esrw1 .country").text());
 
@@ -204,8 +198,6 @@ $(document).ready(function(){
         }
         var firstscore = parseInt($("#wsrw1 .score").text());
         var secondscore = parseInt($("#wsrw2 .score").text());
-        console.log(firstscore);
-        console.log(secondscore);
         if (firstscore > secondscore){
             $("#wtrw1 .country").text($("#wsrw1 .country").text());
 
@@ -218,21 +210,17 @@ $(document).ready(function(){
         }
     });
     $(".finalscore").click(function(){  
-        console.log("Hello");      
         var firstscore = parseInt($("#etrw1 .score").text());
-        var secondscore = parseInt($("#etrw2 .score").text());
-        
+        var secondscore = parseInt($("#wtrw1 .score").text());
+        console.log(firstscore);
         console.log(secondscore);
         if (firstscore > secondscore){
-            $("#etrw1 .country").text($("#esrw1 .country").text());
+            $(".modal-body").text($("#etrw1 .country").text());
 
         }else{
-            $("#etrw1 .country").text($("#esrw2 .country").text());
+            $(".modal-body").text($("#wtrw1 .country").text());
         }
-        for (let i = 1; i <= 1; i++) {
-            var selector = '#etrw' + i + ' .score';
-            $(selector).text(getrandscore());
-        }
+        
         
     });
 });

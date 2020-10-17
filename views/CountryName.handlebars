@@ -1,4 +1,35 @@
 <link rel="stylesheet" href="/stylesheets/bracketstyle.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    .container-fluid{
+        background-color: black;
+    }
+    .modal {
+    }
+    .vertical-alignment-helper {
+        display:table;
+        height: 100%;
+        width: 100%;
+    }
+    .vertical-align-center {
+        /* To center vertically */
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .modal-content {
+        /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+        width:inherit;
+        height:inherit;
+        /* To center horizontally */
+        margin: 0 auto;
+    }
+    h4{
+        font-size: 30px;
+        font-family: 'Holtwood One SC', serif;
+    }
+</style>
 <div class="container-fluid main-div">
 <header class="hero">
     <div class="hero-wrap">
@@ -12,12 +43,10 @@
 
     <section id="bracket">
         <div class="w3-row">
-            
         <div class="col-3  w3-third w3-container"> <button id="startBtn">ADD YOUR COUNTRY</button></div>
         {{!-- <div class="col-3  w3-third w3-container"><a href="/countries/add"></a> <button id="startBtn">ChOOSE NEW COUNTRIES?</button></div> --}}
         <a href="/countries/add" class="homeBtn">CHOOSE NEW COUNTRIES?</a>
         <a href="/home" class="homeBtn"><i class="fa fa-home" aria-hidden="true"></i></a>
-        
         
         </div>
 
@@ -79,20 +108,43 @@
 
 <div class="champion">
         <div class="final">
-            <div class="round-details">championship <br/><span class="country"></span><span class="date"></span></div>      
+            {{!-- <div class="round-details">championship <br/><span class="country"></span><span class="date"></span></div>       --}}
             <ul class ="matchup championship">
-                <li class="team team-top" id="etrw1">&nbsp;<span class="country"></span><span class="score">&nbsp;</span></li>
+                <li class="team team-top" id="etrw1">&nbsp;<span class="country"></span><span class="score"></span></li>
             </ul>
         </div>
+        {{!-- <div>
+            <li class="team team-top" id="frw"><span class="country"></span><span class="score"></span></li>
+        </div> --}}
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>WINNER</h4>
+                        </div>
+                        
+                        <div class="modal-body"><span id="frw" class="country"></span></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="final">
-            <i class="fa fa-trophy"></i>
-            <ul class ="matchup championship">
-                <li class="team team-top" id="wtrw1">&nbsp;<span class="country"></span><span class="score">&nbsp;</span></li>
-            </ul>
+            {{!-- <i class="fa fa-trophy"></i> --}}
+        <ul class ="matchup championship">
+            
+        </ul>
 
         {{!-- final score button --}}
         </div>
-        <button onclick="playAudio()" type="button" id="myAudio" src="./imgs/cheering(2).mp3" class="finalscore">FINAL</button> 
+        <ul class ="matchup championship">
+            <li class="team team-top" id="wtrw1">&nbsp;<span class="country"></span><span class="score"></span></li>
+        </ul>
+        <i class="fa fa-trophy"></i>
+        <button onclick="playAudio()" type="button" id="myAudio" src="./imgs/cheering(2).mp3" class="finalscore" data-toggle="modal" data-target="#myModal">FINAL</button>
         </div>
 
     <div class="split split-two">

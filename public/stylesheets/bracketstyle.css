@@ -118,6 +118,22 @@ body {font-family: 'Istok Web', sans-serif;background: url("http://picjumbo.com/
  
   /* font-weight: normal;font-size: 4.4em;margin:0 0 10px; text-shadow:0 0 10px rgba(0, 0, 0, 0.5);text-transform: uppercase;letter-spacing:-1px; */
 }
+.homeBtn {
+  margin-bottom: 10px;
+  font-size: 18px;
+  margin-left: 10px;
+  color: #5CCA87;
+  border-radius: 15px;
+  background-color: #000;
+  font-family: 'Holtwood One SC', serif;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.fa-home {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 button:focus {outline:0;}
 
@@ -178,16 +194,7 @@ button:focus {outline:0;}
   font-size: larger;
 }
 
-.homeBtn {
-  color: #5CCA87;
-  background-color: #000;
-  font-family: 'Roboto Condensed', sans-serif;
-  margin-right: 470px;
-  font-size: x-large;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-radius: 12px;
-}
+
 
 .playoffBtn {
   color: #5CCA87;

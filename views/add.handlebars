@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/bracketstyle.css">
 <link href="hotsnackbar.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
 <style>
 #snackbar {
   visibility: hidden;
@@ -42,7 +44,6 @@
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
-
 </style>
 <script>
 function showSnackbar(message) {
@@ -86,7 +87,7 @@ function showSnackbar(message) {
             <form action="/addeast" method="POST">
                 <fieldset>
                 <legend class="west">EAST</legend>
-                    <label class="select">Select Country</label>
+                    <label class="choose">Select Country</label>
                     <select id = "eastList" multiple></select>
                 </fieldset>
                 <br>
@@ -99,9 +100,9 @@ function showSnackbar(message) {
         <div class="col-6" id="dropdown-two">
             <div class="card">
             <form align="center" action="/addwest" method="POST">
-                <fieldset form="form2">
+                <fieldset>
                 <legend class="east">WEST</legend>
-                    <label class="select" form="form2">Select Country</label>
+                    <label class="choose">Select Country</label>
                     <select id = "westList" multiple></select>
                 </fieldset>
                 <br>
@@ -118,6 +119,25 @@ function showSnackbar(message) {
     <div class="share-wrap">
         <a href="/countries" class="playoffBtn">Playoff</a>
             <p class="intro" id="intro">Good luck!</p>
+    </div>
+
+    <div>
+
+        <figure class="image is-128x128 is-inline-block">
+            <img class="is-rounded" src="/imgs/flags-multiple-country.jpg"/>
+        </figure>
+
+        <figure class="image is-128x128 is-inline-block">
+            <img class="is-rounded" src="/imgs/flags-second.jpg"/>
+        </figure>
+
+        <figure class="image is-128x128 is-inline-block">
+            <img class="is-rounded" src="/imgs/multiple-flags.jpg"/>
+        </figure>
+
+        <figure class="image is-128x128 is-inline-block">
+            <img class="is-rounded" src="/imgs/flagsofworld2.jpg"/>
+        </figure>
     </div>
     
     <script src="../populate.js"></script>

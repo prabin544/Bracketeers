@@ -1,35 +1,26 @@
 function getrandscore(){
-    return (Math.floor(Math.random() * 100) + 1)
+  return Math.floor(Math.random() * 100) + 1;
 }
 
-$(document).ready(function(){
-
-    // $.get("/alleast")
-    //     .then(function(){
-    //         console.log("success");
-    //     });
+$(document).ready(() => {
     eastcountries = [];
     westcountries = [];
-    //countries = ["Nepal", "Britain", "India", "USA", "Australia", "Japan", "China", "Italy"];
+
     eastplaces = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"]
     westplaces = ["ninth", "tenth", "eleventh", "twelevth", "thirteenth", "fourteenth", "fifteenth", "sixteenth"]
 
     $("#startBtn").click(function(event){
         event.preventDefault();
         ajaxGet();
-        // for (let i = 0; i < countries.length; i++) {
-        //     var selector = '#' + places[i] + ' .country';
-        //     $(selector).text(countries[i]);
-        // }
 
     });
 
     function ajaxGet(){
         $.ajax({
             type: "GET",
-            url:"/alleast",
+            url:"/api/alleast",
             success: function(result){
-                $.each(result, function(i, country){
+                $.each(result, function(_i, country){
                     eastcountries.push(country.countryName)
                     for (let i = 0; i < eastcountries.length; i++) {
                         var selector = '#' + eastplaces[i] + ' .country';
@@ -42,9 +33,10 @@ $(document).ready(function(){
         })
         $.ajax({
             type: "GET",
-            url:"/allwest",
+            url:"/api/allwest",
             success: function(result){
-                $.each(result, function(i, country){
+                console.log(result);
+                $.each(result, function(_i, country){
                     westcountries.push(country.countryName)
                     for (let i = 0; i < westcountries.length; i++) {
                         var selector = '#' + westplaces[i] + ' .country';
@@ -56,12 +48,7 @@ $(document).ready(function(){
         })
     }
 
-    // let randnum = [];
-    // for (let i = 0; i < 16; i++) {
-    //     randnum.push(Math.floor(Math.random() * 100) + 1)
-    // }
-    
-    $("#playBtn").click(function(){
+    $("#playBtn").click(() => {
         for (let i = 0; i < 8; i++) {
             var selector = '#' + eastplaces[i] + ' .score';
             $(selector).text(getrandscore());
@@ -209,7 +196,7 @@ $(document).ready(function(){
             $(selector).text(getrandscore());
         }
     });
-    $(".finalscore").click(function(){  
+    $(".finalscore").click(() => {  
         var firstscore = parseInt($("#etrw1 .score").text());
         var secondscore = parseInt($("#wtrw1 .score").text());
         console.log(firstscore);

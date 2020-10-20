@@ -1,64 +1,105 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
+// Requiring our models and passport as we've configured it
+const db = require("../models");
+const passport = require("../config/passport");
 
-// Dependencies
-// =============================================================
-var mysqlConnection = require("../config/database");
-
-// Routes
-// =============================================================
 module.exports = function(app) {
-  // Get all chirps
-  app.get("/alleast", function(req, res) {    
-    var dbQuery = "SELECT * FROM eastcountry";
-
-    mysqlConnection.query(dbQuery, function(err, result) {
-      if (err) throw err;
-      res.json(result);
+  // Using the passport.authenticate middleware with our local strategy.
+  // If the user has valid login credentials, send them to the members page.
+  // Otherwise the user will be sent an error
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      email: req.user.email,
+      id: req.user.id
     });
   });
 
-  app.get("/allwest", function(req, res) {
-    var dbQuery = "SELECT * FROM westcountry";
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // otherwise send back an error
+  app.post("/api/signup", (req, res) => {
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(() => {
+        res.redirect(307, "/api/login");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
 
-    mysqlConnection.query(dbQuery, function(err, result) {
-      if (err) throw err;
-      res.json(result);
+  // Route for logging user out
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
+
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
+  });
+
+  app.get("/api/alleast", function(req, res) {   
+    console.log(res); 
+    db.eastcountries.findAll().then(function(dbCountryName) {
+      console.log(dbCountryName)
+      res.json(dbCountryName);
+
+    });
+  });
+
+  app.get("/api/allwest", function(req, res)  {
+    db.westcountries.findAll().then(function(dbCountryName) {
+      res.json(dbCountryName);
+
     });
   });
 
   // Add a country
-    app.post('/addwest', (request, response) => {
-        let req = request.body;
-        console.log(req);
-        var sql = "TRUNCATE table westcountry";
-        mysqlConnection.query(sql, (err, rows, fields) => {
-            
-        });
-        for (let i = 0; i < req.NameList.length; i++) {
-          var sql = "INSERT INTO westcountry(countryName) VALUES (?)";
-          mysqlConnection.query(sql, [req.NameList[i]],  (err, rows, fields) => {
-            
-        });
-          
-        }
+  app.post('/api/addwest', (request, response) => {
+    let req = request.body;
+    console.log(req);
+    console.log(req.NameList);
+    db.westcountries.destroy({
+      where: {},
+      truncate: true
+    })
+    for (let i = 0; i < req.NameList.length; i++) {
+      db.westcountries.create({
+        countryName: req.NameList[i]
+      })
         
-    });
+    }
+    
+      
+  });
+  app.post('/api/addeast', (request, response) => {
+    let req = request.body;
+    console.log(req);
+    console.log(req.NameList);
+    db.eastcountries.destroy({
+      where: {},
+      truncate: true
+    })
+    for (let i = 0; i < req.NameList.length; i++) {
+      db.eastcountries.create({
+        countryName: req.NameList[i]
+      })
+        
+    }
+  });
 
-    app.post('/addeast', (request, response) => {
-      let req = request.body;
-      console.log(req);
-      var sql = "TRUNCATE table eastcountry";
-      mysqlConnection.query(sql, (err, rows, fields) => {
-          
-      });
-      for (let i = 0; i < req.NameList.length; i++) {
-        var sql = "INSERT INTO eastcountry(countryName) VALUES (?)";
-        mysqlConnection.query(sql, [req.NameList[i]],  (err, rows, fields) => {
-          
-      });
-        
-      }
-    });
 };
+        

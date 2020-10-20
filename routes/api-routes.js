@@ -52,9 +52,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/alleast", function(req, res) {   
-    console.log(res); 
     db.eastcountries.findAll().then(function(dbCountryName) {
-      console.log(dbCountryName)
       res.json(dbCountryName);
 
     });
@@ -70,8 +68,6 @@ module.exports = function(app) {
   // Add a country
   app.post('/api/addwest', (request, response) => {
     let req = request.body;
-    console.log(req);
-    console.log(req.NameList);
     db.westcountries.destroy({
       where: {},
       truncate: true
@@ -82,13 +78,10 @@ module.exports = function(app) {
       })
         
     }
-    
       
   });
   app.post('/api/addeast', (request, response) => {
     let req = request.body;
-    console.log(req);
-    console.log(req.NameList);
     db.eastcountries.destroy({
       where: {},
       truncate: true

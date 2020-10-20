@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Sign in</title>
+  <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+  font-weight: bold;
+}
+
+.bgimg {
+  background-image: url('/imgs/united_nations.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+} 
+
+@media screen and (min-width: 480px) {
+    .fadeContainer {
+background-color: rgb(55, 49, 49);
+opacity: 0.9;
+width: inherit;
+}
+}
+
+.w3-tag {
+animation: reverse;
+}
+
+
+.here {
+  color: rgba(249, 100, 244, 0.988);
+  
+}
+
+.line-1{
+position: relative;
+top: 50%;  
+width: 24em;
+margin: 0 auto;
+border-right: 2px solid rgba(255,255,255,.75);
+font-size: 180%;
+text-align: center;
+white-space: nowrap;
+overflow: hidden;
+transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+         blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
+
+.rotate {
+animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(359deg);
+}
+}
+
+
+    @media screen and (min-width: 480px) {
+        .fadeContainer {
+    background-color: rgb(55, 49, 49);
+    opacity: 0.9;
+    width: inherit;
+  }
+}
+
+.btn {
+	margin-top: 25px;
+}
+
+.fadeContainer {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+  margin-top: -100px;
+}
+
+p{
+  color: white;
+}
+    </style>
+</head>
+
+<body>
+  
+  <div class="bgimg w3-display-container w3-wide" id="home">
+    <header class="w3-container w3-center w3-padding-35 w3-white">
+      <h1 class="w3-xlarge"><b>THE BRACKETEERS</b></h1>
+      <h6>COUNTRY VS COUNTRY</h6> 
+      <br>
+      <span class="w3-tag line-1 anim-typewriter">SIGN IN STARTS NOW...</span>
+    </header>
+    <div class="w3-display-middle w3-padding-large">
+   
+      <!-- <h1 class="w3-text-white">Login</h1> -->
+	  <div class="fadeContainer w3-center">
+		<h1 class="w3-jumbo w3-text-white w3-hide-small"><b>SIGNUP FORM</b></h1>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form class="signup">
+          <div class="form-group">
+            <label for="exampleInputEmail1"></label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1"></label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-default">Sign Up</button>
+        </form>
+        <br />
+        <p>Or log in <a href="/login">here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
+
+</body>
+
+</html>

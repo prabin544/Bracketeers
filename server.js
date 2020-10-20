@@ -1,162 +1,50 @@
 // Requiring necessary npm packages
 const express = require("express");
+const session = require("express-session");
 // Requiring passport as we've configured it
+const passport = require("./config/passport");
 const exphbs = require("express-handlebars");
-const path = require("path");
-const bodyParser = require("body-parser");
-var session = require('express-session');
-var mysqlConnection = require('./config/database');
+require("dotenv").config()
 
+// Setting up port and requiring models for syncing
+const PORT = process.env.PORT || 8080;
+const db = require("./models");
 
-// if (process.env.JAWSDB_URL) {
-//     connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
-//     mysqlConnection = mysql.createConnection({
-//         host: "localhost",
-//         port: 3306,
-//         user: "root",
-//         password: "pravin123",
-//         database: "nodelogin",
-//         multipleStatements: true
-//     });
-// };
-
-// mysqlConnection.connect((err) => {
-//     if (!err) {
-//         console.log('db passed !! connection is made');
-//     }
-// });
-
+// Creating express app and configuring middleware needed for authentication
 const app = express();
 //Handlebars
-app.engine("handlebars", exphbs({
+app.engine(
+  "handlebars",
+  exphbs({
     defaultLayout: "main"
-}));
+  })
+);
 app.set("view engine", "handlebars");
-//Body Parser
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
-//set static foler
-app.use(express.static(path.join(__dirname, "public")))
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Countires routes
 app.use("/countries", require("./routes/Countries"));
-const PORT = process.env.PORT || 8090;
-//app.get("/home", (req, res) => res.render("index", {defaultLayout: "landing"}));
-app.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-}));
-app.get('/', function (request, response) {
-    response.sendFile(path.join(__dirname + '/login.html'));
-});
 
-const signup = require("./routes/signup");
-app.use("/signup.html", signup);
-
-
-app.post('/auth', function (request, response) {
-    var username = request.body.username;
-    var password = request.body.password;
-    if (username && password) {
-        mysqlConnection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function (error, results, fields) {
-            if (results.length > 0) {
-                request.session.loggedin = true;
-                request.session.username = username;
-                response.redirect('/home');
-            } else {
-                response.send('Incorrect Username and/or Password!');
-            }
-            response.end();
-        });
-    } else {
-        response.send('Please enter Username and Password!');
-        response.end();
-    }
-});
-
-
-app.post('/register', function (request, response) {
-    var username = request.body.username;
-    var password = request.body.password;
-    if (username && password) {
-        mysqlConnection.query('INSERT INTO accounts SET ?', {
-            username,
-            password
-        }, function (error, fields) {
-            if (error) {
-                throw error;
-            } else {
-                response.redirect('/');
-            }
-            response.end();
-        });
-    } else {
-        response.send('Please enter Username and Password!');
-        response.end();
-    }
-});
-
-app.get("/home", (req, res) => res.render("index", {
-    defaultLayout: "landing"
-}));
-app.listen(PORT, console.log(`Visit http://localhost:%s/ in your browser${PORT}`));
-
+// Requiring our routes
+require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-// app.post('/addeast', (request, response) => {
-//     let req = request.body;
-//     console.log(req);
-//     var sql = "SET @ID = ? ; SET @Name = ?;\
-//     CALL RecordAdd(@ID, @Name);";
-//     mysqlConnection.query(sql, [11, req.Name],  (err, rows, fields) => {
-//         if (!err) {
-//             response.send(rows);
-//         }
-//     });
-// });
-
-// app.post('/addwest', (request, response) => {
-//     let req = request.body;
-//     console.log(req);
-//     var sql = "SET @ID = ? ; SET @Name = ?;\
-//     CALL RecordAdd(@Name);";
-//     mysqlConnection.query(sql, [0, req.Name],  (err, rows, fields) => {
-//         if (!err) {
-//             response.send(rows);
-//         }
-//     });
-// });
-
-// app.post('/addwest', (request, response) => {
-//     let req = request.body;
-//     console.log(req);
-//     var sql = "INSERT INTO westcountry(countryName) VALUES (?)";
-//     mysqlConnection.query(sql, [req.Name],  (err, rows, fields) => {
-//         if (!err) {
-//             response.send(rows);
-//         }
-//     });
-// });
-
-// app.post('/addeast', (request, response) => {
-//     let req = request.body;
-//     console.log(req);
-//     var sql = "INSERT INTO eastcountry(countryName) VALUES (?)";
-//     mysqlConnection.query(sql, [req.Name],  (err, rows, fields) => {
-//         if (!err) {
-//             response.send(rows);
-//         }
-//     });
-// });
-
-// app.get("/api/all", function(req, res) {
-//     var dbQuery = "SELECT * FROM chirps";
-
-//     connection.query(dbQuery, function(err, result) {
-//       if (err) throw err;
-//       res.json(result);
-//     });
-//   });
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
+});

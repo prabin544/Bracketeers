@@ -84,7 +84,7 @@ function showSnackbar(message) {
     <div class="row">
         <div class="col-6" id="dropdown">
             <div class="card">
-            <form action="/addeast" method="POST">
+            <form action="/api/addeast" method="POST">
                 <fieldset>
                 <legend class="west">EAST</legend>
                     <label class="choose">Select Country</label>
@@ -99,7 +99,7 @@ function showSnackbar(message) {
         
         <div class="col-6" id="dropdown-two">
             <div class="card">
-            <form align="center" action="/addwest" method="POST">
+            <form align="center" action="/api/addwest" method="POST">
                 <fieldset>
                 <legend class="east">WEST</legend>
                     <label class="choose">Select Country</label>
@@ -124,10 +124,6 @@ function showSnackbar(message) {
     <div>
 
         <figure class="image is-128x128 is-inline-block">
-            <img class="is-rounded" src="/imgs/flags-multiple-country.jpg"/>
-        </figure>
-
-        <figure class="image is-128x128 is-inline-block">
             <img class="is-rounded" src="/imgs/flags-second.jpg"/>
         </figure>
 
@@ -140,4 +136,4 @@ function showSnackbar(message) {
         </figure>
     </div>
     
-    <script src="../populate.js"></script>
+    <script src="/js/populate.js"></script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,51 +109,50 @@ transform: rotate(359deg);
 	padding-bottom: 10px;
   margin-top: -100px;
 }
+p{
+  color: white;
+}
 
     </style>
+</head>
 
-
-	</head>
-	<body>
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-
-    <!-- Header -->
+<body>
+  
+  <div class="bgimg w3-display-container w3-wide" id="home">
     <header class="w3-container w3-center w3-padding-35 w3-white">
       <h1 class="w3-xlarge"><b>THE BRACKETEERS</b></h1>
       <h6>COUNTRY VS COUNTRY</h6> 
       <br>
       <span class="w3-tag line-1 anim-typewriter">LET THE GAMES BEGIN...</span>
     </header>
-
-      <!-- Image header -->
-  <div class="bgimg w3-display-container w3-wide" id="home">
     <div class="w3-display-middle w3-padding-large">
    
       <!-- <h1 class="w3-text-white">Login</h1> -->
 	  <div class="fadeContainer w3-center">
 		<h1 class="w3-jumbo w3-text-white w3-hide-small"><b>LOGIN FORM</b></h1>
-		<div class="login-form">
-			<label for="exampleInputEmail1" class="w3-text-white">EMAIL ADDRESS</label>
-			<form action="auth" method="POST">
-				<div class="form-group">
-				<input type="text" name="username" placeholder="Username" required>
-				<br>
-				<label for="exampleInputPassword1" class="w3-text-white">PASSWORD</label>
-				<br>
-				<input type="password" name="password" placeholder="Password" required>
-				<div class="form-group">
-				<button type="submit" class="btn btn-default">LOGIN</button>
-				</div>
-				<p class="w3-text-white">Or sign up <a class="here" href="signup.html">HERE</a></p>
-			</form>
-		</div>
-</div>
-</div>
-	</div>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1"></label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1"></label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+        <br />
+        <p>Or sign up <a href="/">here</a></p>
+      </div>
+    </div>
+  </div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 
-	</body>
+</body>
+
 </html>

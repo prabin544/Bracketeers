@@ -64,10 +64,10 @@ $(document).ready(() => {
         var secondscore = parseInt($("#second .score").text());
         var thirdscore = parseInt($("#third .score").text());
         var fourthscore = parseInt($("#fourth .score").text());
-        var fifthscore = parseInt($("#fourth .score").text());
-        var sixthscore = parseInt($("#fourth .score").text());
-        var sevenththscore = parseInt($("#fourth .score").text());
-        var eighthscore = parseInt($("#fourth .score").text());
+        var fifthscore = parseInt($("#fifth .score").text());
+        var sixthscore = parseInt($("#sixth .score").text());
+        var sevenththscore = parseInt($("#seventh .score").text());
+        var eighthscore = parseInt($("#eighth .score").text());
    
         if (firstscore > secondscore){
             $("#efrw1 .country").text($("#first .country").text());
@@ -161,9 +161,9 @@ $(document).ready(() => {
             $("#wsrw1 .country").text($("#wfrw2 .country").text());
         }
         if (thirdscore > fourthscore){
-            $("#wsrw2 .country").text($("#efrw3 .country").text());
+            $("#wsrw2 .country").text($("#wfrw3 .country").text());
         }else{
-            $("#wsrw2 .country").text($("#efrw4 .country").text());
+            $("#wsrw2 .country").text($("#wfrw4 .country").text());
         }
         for (let i = 1; i <= 4; i++) {
             var selector = '#wsrw' + i + ' .score';

@@ -1,4 +1,4 @@
-# projectpurple
+# Bracket Game
 
 ## Index
 * About our project
@@ -10,7 +10,7 @@
 * Links
 
 ## About our project
-This is the bracketeers app that engages the user to play and win an international sports bracket.
+This is the bracketeers app that engages the user to play and win an international sports bracket.  It was built to allow users to pass time and watch their favorite country take the title.
 
 ## How this works
 step one:
